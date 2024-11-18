@@ -1,0 +1,14 @@
+public String largestNumber(int[] a) {
+        List<Integer> nums = new ArrayList<>();
+        for(int i : a)
+         nums.add(i);
+        Collections.sort(nums , (x,y) -> {
+          return (y+""+x+""+"").compareTo(x+""+y+""+"");
+        });
+        if(nums.get(0)==0)
+           return "0";
+        String ret = "";
+        for(int s : nums)
+          ret += s+"";
+        return ret;
+    }
